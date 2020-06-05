@@ -26,6 +26,7 @@ ufc-prediction
 │
 └───modeling
 │   │   Modeling and Generalizing for New Bouts.ipynb
+│   │   Best so far: SVM classifier (Accuracy=0.78, Precision=0.76, Recall=0.96, AUC=0.70)
 │
 └───production
 │   │   ...
