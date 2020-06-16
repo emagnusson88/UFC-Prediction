@@ -114,8 +114,14 @@ def create_fight_data_csv(event_and_fight_links: Dict[str, List[str]],
 						filename: str = 'total_fight_data.csv', header: str = HEADER) -> None:
 
 	CSV_PATH = BASE_PATH/filename
-	assert CSV_PATH.exists()!=True, 'filename exists'
+	#assert CSV_PATH.exists()!=True, 'filename exists'
 	total_stats = get_total_fight_stats(event_and_fight_links)
-	with open(CSV_PATH.as_posix(), 'wb') as file:
-		file.write(bytes(header, encoding='ascii', errors='ignore'))
-		file.write(bytes(total_stats, encoding='ascii', errors='ignore'))
+
+	if CSV_PATH.exists()!=True:
+		with open(CSV_PATH.as_posix(), 'a') as file:
+			#file.write(bytes(header, encoding='ascii', errors='ignore'))
+			file.write(bytes(total_stats, encoding='ascii', errors='ignore'))
+	else:
+		with open(CSV_PATH.as_posix(), 'wb') as file:
+			file.write(bytes(header, encoding='ascii', errors='ignore'))
+			file.write(bytes(total_stats, encoding='ascii', errors='ignore'))
