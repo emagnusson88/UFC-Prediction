@@ -60,7 +60,7 @@ def get_fighter_name_and_link(fighter_group_urls: List[str]) -> Dict[str, List[s
 	pickle.dump(new_fighter_links, pickle_out)
 	pickle_out.close()
 
-	fighter_name_and_link = dict(filter(lambda elem: elem[1] not in fighter_links,fighter_name_and_link.items()))
+	fighter_name_and_link = dict(filter(lambda elem: elem[1] in fighter_links,fighter_name_and_link.items()))
 
 	return fighter_name_and_link
 
@@ -90,11 +90,18 @@ def create_fighter_data_csv() -> None:
 	fighter_group_urls = get_fighter_group_urls()
 	fighter_name_and_details = get_fighter_name_and_details(get_fighter_name_and_link(fighter_group_urls))
 
-	df = pd.DataFrame(fighter_name_and_details).T.replace('--', value=np.NaN).replace('', value=np.NaN)
-	df.columns = HEADER
+	try:
+		df = pd.DataFrame(fighter_name_and_details).T.replace('--', value=np.NaN).replace('', value=np.NaN)
 
-	existing_data = pd.read_csv(CSV_PATH.as_posix())
+		df.columns = HEADER
 
-	final_df = pd.concat([df,existing_data]).drop_duplicates()
+	except Exception as ex:
+		print(ex)
 
-	final_df.to_csv(CSV_PATH.as_posix(), index_label = 'fighter_name')
+	#print(df.head())
+	#df = df[['fighter_name','DOB','Height','Reach','Stance','Weight']]
+	#existing_data = pd.read_csv(CSV_PATH.as_posix())
+	#final_df = pd.concat([df,existing_data], sort=False).drop_duplicates()
+	#final_df.to_csv(CSV_PATH.as_posix(), index_label = 'fighter_name')
+	
+	df.to_csv(CSV_PATH.as_posix(), mode='a', index_label = 'fighter_name', header=False)

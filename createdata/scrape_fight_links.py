@@ -9,6 +9,7 @@ from createdata.make_soup import make_soup
 import numpy as np
 
 ALL_EVENTS_URL = 'http://ufcstats.com/statistics/events/completed?page=all'
+UPCOMING_EVENTS_URL = 'http://ufcstats.com/statistics/events/upcoming?page=all'
 BASE_PATH = Path(os.getcwd())/'data'
 EVENT_AND_FIGHT_LINKS_PATH = BASE_PATH/'event_and_fight_links.pickle'
 PAST_EVENT_LINKS_PATH = BASE_PATH/'past_event_links.pickle'
@@ -70,6 +71,17 @@ def get_link_of_past_events_no_pickle(all_events_url: str=ALL_EVENTS_URL) -> Lis
 
     return links
 
+def get_link_of_upcoming_events_no_pickle(upcoming_events_url: str=UPCOMING_EVENTS_URL) -> List[str]:
+    links = []
+    url = upcoming_events_url
+    soup = make_soup(upcoming_events_url)
+    for link in soup.findAll('td',{'class': 'b-statistics__table-col'}):
+        for href in link.findAll('a'):
+            foo = href.get('href')
+            links.append(foo)
+
+    return links
+
 def get_event_and_fight_links_no_pickle(event_links: List[str]) -> Dict[str, List[str]]:
 	event_and_fight_links = {}
 	for link in event_links:
@@ -108,6 +120,13 @@ def get_all_new_links() -> Dict[str, List[str]]:
 		pickle_out.close()
 
 	return event_and_fight_links
+
+def get_upcoming_links() -> Dict[str, List[str]]:
+
+	upcoming_event_links = get_link_of_upcoming_events_no_pickle()
+	upcoming_event_and_fight_links = get_event_and_fight_links_no_pickle(upcoming_event_links)
+
+	return upcoming_event_and_fight_links
 
 ###############################3333
 

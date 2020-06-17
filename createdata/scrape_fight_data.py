@@ -110,12 +110,61 @@ def get_total_fight_stats(event_and_fight_links: Dict[str, List[str]]) -> str:
 
 	return total_stats
 
+def get_upcoming_fight_stats(event_and_fight_links: Dict[str, List[str]]) -> str:
+	total_stats = ''
+
+	l = len(event_and_fight_links)
+	print('Scraping upcoming fight data: ')
+	print_progress(0, l, prefix = 'Progress:', suffix = 'Complete')
+
+	for index, (event,fights) in enumerate(event_and_fight_links.items()):
+		event_soup = make_soup(event)
+		event_info = get_event_info(event_soup)
+
+		for fight in fights:
+			try:
+				fight_soup = make_soup(fight)
+				fight_stats = get_fight_stats(fight_soup)
+				fight_details = get_fight_details(fight_soup)
+				result_data = get_fight_result_data(fight_soup)
+			except Exception as e:
+				continue
+
+			total_fight_stats = fight_stats + ';' + fight_details + ';' + event_info + \
+							';' + result_data
+
+			if total_stats == '':
+				total_stats = total_fight_stats
+			else:
+				total_stats = total_stats + '\n' + total_fight_stats
+
+		print_progress(index + 1, l, prefix = 'Progress:', suffix = 'Complete')
+
+	return total_stats
+
 def create_fight_data_csv(event_and_fight_links: Dict[str, List[str]],
 						filename: str = 'total_fight_data.csv', header: str = HEADER) -> None:
 
 	CSV_PATH = BASE_PATH/filename
 	#assert CSV_PATH.exists()!=True, 'filename exists'
 	total_stats = get_total_fight_stats(event_and_fight_links)
+
+	if CSV_PATH.exists()!=True:
+		with open(CSV_PATH.as_posix(), 'a') as file:
+			#file.write(bytes(header, encoding='ascii', errors='ignore'))
+			file.write(bytes(total_stats, encoding='ascii', errors='ignore'))
+	else:
+		with open(CSV_PATH.as_posix(), 'wb') as file:
+			file.write(bytes(header, encoding='ascii', errors='ignore'))
+			file.write(bytes(total_stats, encoding='ascii', errors='ignore'))
+
+
+def create_upcoming_fight_data_csv(upcoming_event_and_fight_links: Dict[str, List[str]],
+						filename: str = 'upcoming_fight_data.csv', header: str = HEADER) -> None:
+
+	CSV_PATH = BASE_PATH/filename
+	#assert CSV_PATH.exists()!=True, 'filename exists'
+	total_stats = get_total_fight_stats(upcoming_event_and_fight_links)
 
 	if CSV_PATH.exists()!=True:
 		with open(CSV_PATH.as_posix(), 'a') as file:
