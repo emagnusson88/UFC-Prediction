@@ -12,6 +12,9 @@ HEADER: str = 'R_fighter;B_fighter;R_KD;B_KD;R_SIG_STR.;B_SIG_STR.\
 ;B_TD_pct;R_SUB_ATT;B_SUB_ATT;R_PASS;B_PASS;R_REV;B_REV;R_HEAD;B_HEAD;R_BODY\
 ;B_BODY;R_LEG;B_LEG;R_DISTANCE;B_DISTANCE;R_CLINCH;B_CLINCH;R_GROUND;B_GROUND\
 ;win_by;last_round;last_round_time;Format;Referee;date;location;Fight_type;Winner\n'
+
+HEADER_upcoming: str = 'R_fighter;B_fighter;Format;date;location\n'
+
 BASE_PATH = Path(os.getcwd())/'data'
 
 def get_fight_stats(fight_soup: BeautifulSoup) -> str:
@@ -42,6 +45,30 @@ def get_fight_details(fight_soup: BeautifulSoup) -> str:
 	            columns = col.text
 	        else:
 	            columns = columns + ',' +(col.text)
+
+	columns = columns.replace('  ', '').replace('\n\n\n\n', ',')\
+	.replace('\n', '').replace(', ', ',').replace(' ,',',')\
+	.replace('Method: ', '').replace('Round:', '').replace('Time:', '')\
+	.replace('Time format:', '').replace('Referee:', '')
+
+	fight_details = ';'.join(columns.split(',')[:5])
+
+	return fight_details
+
+def get_upcoming_fight_details(fight_soup: BeautifulSoup) -> str:
+	columns = ''
+	for div in fight_soup.findAll('div', {'class':'b-fight-details'}):
+		for col in div.findAll('h3', {'class': 'b-fight-details__person-name'}):
+			if columns == '':
+				columns = col.text
+			else:
+				columns = columns + ',' +(col.text)
+
+		for col in div.findAll('i', {'class': 'b-fight-details__fight-title'}):
+			if columns == '':
+				columns = col.text
+			else:
+				columns = columns + ',' +(col.text)
 
 	columns = columns.replace('  ', '').replace('\n\n\n\n', ',')\
 	.replace('\n', '').replace(', ', ',').replace(' ,',',')\
@@ -111,36 +138,33 @@ def get_total_fight_stats(event_and_fight_links: Dict[str, List[str]]) -> str:
 	return total_stats
 
 def get_upcoming_fight_stats(event_and_fight_links: Dict[str, List[str]]) -> str:
-	total_stats = ''
+    total_stats = ''
 
-	l = len(event_and_fight_links)
-	print('Scraping upcoming fight data: ')
-	print_progress(0, l, prefix = 'Progress:', suffix = 'Complete')
+    l = len(event_and_fight_links)
+    print('Scraping upcoming fight data: ')
+    print_progress(0, l, prefix = 'Progress:', suffix = 'Complete')
 
-	for index, (event,fights) in enumerate(event_and_fight_links.items()):
-		event_soup = make_soup(event)
-		event_info = get_event_info(event_soup)
+    for index, (event,fights) in enumerate(event_and_fight_links.items()):
+        event_soup = make_soup(event)
+        event_info = get_event_info(event_soup)
 
-		for fight in fights:
-			try:
-				fight_soup = make_soup(fight)
-				fight_stats = get_fight_stats(fight_soup)
-				fight_details = get_fight_details(fight_soup)
-				result_data = get_fight_result_data(fight_soup)
-			except Exception as e:
-				continue
+        for fight in fights:
+            try:
+                fight_soup = make_soup(fight)
+                fight_details = get_upcoming_fight_details(fight_soup)
+            except Exception as e:
+                continue
 
-			total_fight_stats = fight_stats + ';' + fight_details + ';' + event_info + \
-							';' + result_data
+            total_upcoming_info = fight_details + ';' + event_info
 
-			if total_stats == '':
-				total_stats = total_fight_stats
-			else:
-				total_stats = total_stats + '\n' + total_fight_stats
+            if total_stats == '':
+                total_stats = total_upcoming_info
+            else:
+                total_stats = total_stats + '\n' + total_upcoming_info
 
-		print_progress(index + 1, l, prefix = 'Progress:', suffix = 'Complete')
+        print_progress(index + 1, l, prefix = 'Progress:', suffix = 'Complete')
 
-	return total_stats
+    return total_stats
 
 def create_fight_data_csv(event_and_fight_links: Dict[str, List[str]],
 						filename: str = 'total_fight_data.csv', header: str = HEADER) -> None:
@@ -154,23 +178,23 @@ def create_fight_data_csv(event_and_fight_links: Dict[str, List[str]],
 			#file.write(bytes(header, encoding='ascii', errors='ignore'))
 			file.write(bytes(total_stats, encoding='ascii', errors='ignore'))
 	else:
-		with open(CSV_PATH.as_posix(), 'wb') as file:
+		with open(CSV_PATH.as_posix(), 'a') as file:
 			file.write(bytes(header, encoding='ascii', errors='ignore'))
 			file.write(bytes(total_stats, encoding='ascii', errors='ignore'))
 
 
 def create_upcoming_fight_data_csv(upcoming_event_and_fight_links: Dict[str, List[str]],
-						filename: str = 'upcoming_fight_data.csv', header: str = HEADER) -> None:
+                        filename: str = 'upcoming_fight_data.csv', header: str = HEADER_upcoming) -> None:
 
-	CSV_PATH = BASE_PATH/filename
-	#assert CSV_PATH.exists()!=True, 'filename exists'
-	total_stats = get_total_fight_stats(upcoming_event_and_fight_links)
+    CSV_PATH = BASE_PATH/filename
+    #assert CSV_PATH.exists()!=True, 'filename exists'
+    total_stats = get_upcoming_fight_stats(upcoming_event_and_fight_links)
 
-	if CSV_PATH.exists()!=True:
-		with open(CSV_PATH.as_posix(), 'a') as file:
-			#file.write(bytes(header, encoding='ascii', errors='ignore'))
-			file.write(bytes(total_stats, encoding='ascii', errors='ignore'))
-	else:
-		with open(CSV_PATH.as_posix(), 'wb') as file:
-			file.write(bytes(header, encoding='ascii', errors='ignore'))
-			file.write(bytes(total_stats, encoding='ascii', errors='ignore'))
+    if CSV_PATH.exists()!=True:
+        with open(CSV_PATH.as_posix(), 'a') as file:
+            #file.write(bytes(header, encoding='ascii', errors='ignore'))
+            file.write(bytes(total_stats, encoding='ascii', errors='ignore'))
+    else:
+        with open(CSV_PATH.as_posix(), 'wb') as file:
+            file.write(bytes(header, encoding='ascii', errors='ignore'))
+            file.write(bytes(total_stats, encoding='ascii', errors='ignore'))
