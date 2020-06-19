@@ -8,10 +8,10 @@ from datetime import datetime
 
 startTime = datetime.now()
 
-event_and_fight_links = get_all_links()
+#event_and_fight_links = get_all_links()
 
 ##################### uncomment
-#event_and_fight_links = get_all_new_links()
+event_and_fight_links = get_all_new_links()
 
 create_fight_data_csv(event_and_fight_links)
 

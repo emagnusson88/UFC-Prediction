@@ -178,8 +178,8 @@ def create_fight_data_csv(event_and_fight_links: Dict[str, List[str]],
 			#file.write(bytes(header, encoding='ascii', errors='ignore'))
 			file.write(bytes(total_stats, encoding='ascii', errors='ignore'))
 	else:
-		with open(CSV_PATH.as_posix(), 'a') as file:
-			file.write(bytes(header, encoding='ascii', errors='ignore'))
+		with open(CSV_PATH.as_posix(), 'ab') as file:
+			#file.write(bytes(header, encoding='ascii', errors='ignore'))
 			file.write(bytes(total_stats, encoding='ascii', errors='ignore'))
 
 
