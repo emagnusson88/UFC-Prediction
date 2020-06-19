@@ -20,6 +20,7 @@ ufc-prediction
 └───data
 │   │   total_fight_data.csv -historical UFC fight data (e.g. fight participants, weight class, significant strikes)
 │   │   fighter_details.csv -fighter-specific information (e.g. Height, Weight, DOB)
+│   │   upcoming_fight_data.csv -future UFC fight data (e.g. fight participants, weight class, location, date)
 │
 └───cleaning
 │   │   Initial Load, Cleaning, and Feature Engineering.ipynb
