@@ -11,14 +11,14 @@ startTime = datetime.now()
 #event_and_fight_links = get_all_links()
 
 ##################### uncomment
-event_and_fight_links = get_all_new_links()
+#event_and_fight_links = get_all_new_links()
 
-create_fight_data_csv(event_and_fight_links)
+#create_fight_data_csv(event_and_fight_links)
 
 create_fighter_data_csv()
 
-upcoming_event_and_fight_links = get_upcoming_links()
+#upcoming_event_and_fight_links = get_upcoming_links()
 
-create_upcoming_fight_data_csv(upcoming_event_and_fight_links)
+#create_upcoming_fight_data_csv(upcoming_event_and_fight_links)
 
 print('Runtime (min): ', (datetime.now() - startTime).seconds / 60)

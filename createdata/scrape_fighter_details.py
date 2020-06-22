@@ -10,7 +10,7 @@ from createdata.print_progress import print_progress
 from createdata.make_soup import make_soup
 from typing import List, Dict, Tuple
 
-HEADER = ['Height', 'Weight', 'Reach', 'Stance', 'DOB']
+HEADER = ['Height', 'DOB', 'Height', 'Reach', 'Stance', 'Weight']
 BASE_PATH = Path(os.getcwd())/'data'
 CSV_PATH = BASE_PATH/'fighter_details.csv'
 PAST_FIGHTER_LINKS_PATH = BASE_PATH/'fighter_links.pickle'
@@ -103,5 +103,5 @@ def create_fighter_data_csv() -> None:
 	#existing_data = pd.read_csv(CSV_PATH.as_posix())
 	#final_df = pd.concat([df,existing_data], sort=False).drop_duplicates()
 	#final_df.to_csv(CSV_PATH.as_posix(), index_label = 'fighter_name')
-	
+
 	df.to_csv(CSV_PATH.as_posix(), mode='a', index_label = 'fighter_name', header=False)
