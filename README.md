@@ -15,7 +15,7 @@ ufc-prediction
 │   │   scrape_fight_links.py
 │   │   scrape_fight_data.py
 │   │   scrape_fighter_details.py
-│   │   Executable: scrape_data.py
+│   │   Execute: scrape_data.py
 │
 └───data
 │   │   total_fight_data.csv -historical UFC fight data (e.g. fight participants, weight class, significant strikes)
