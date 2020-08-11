@@ -1012,6 +1012,9 @@ proba = clf.predict_proba(X_pred)
 df_future_est['Red_win'] = predicted_classes
 df_future_est['Confidence'] = np.amax(proba, axis=1)
 
-df_output = df_future_est[df_future_est['date']>='2020-07-18'][['date','R_fighter','B_fighter','Red_win', 'Confidence']]
+df_output = df_future_est[['date','R_fighter','B_fighter','Red_win', 'Confidence']]
+
+df_output.rename(columns={'date':'Event Date','R_fighter':'Red Corner','B_fighter':'Blue Corner','Red_win':'Red Win'}, inplace = True)
+
 df_output.to_csv(DATA_PATH+'/predictions.csv', index = False, header=True)
 print(df_output)
