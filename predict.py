@@ -185,7 +185,7 @@ feature_importance[feature_importance > 0.01]
 
 import matplotlib.pyplot as plt
 import seaborn as sns
-get_ipython().run_line_magic('matplotlib', 'inline')
+#get_ipython().run_line_magic('matplotlib', 'inline')
 
 # Creating a bar plot
 feature_importance_plt = feature_importance[feature_importance > 0.01]
@@ -453,9 +453,9 @@ hyper_opt = dict(n_estimators = n_estimators, max_depth = max_depth,
 gridF = GridSearchCV(clf, hyper_opt, cv = 3, verbose = 1,
                       n_jobs = -1)
 
+#Hyperparameter tuning that takes a long time
 #bestF = gridF.fit(X_train, y_train)
-
-bestF
+#bestF
 
 
 # - Optimal Random Forest Classifier (after hyperparamter tuning)
@@ -751,7 +751,6 @@ df_future_bouts
 # In[134]:
 
 
-#3 fights look-back appears to have the highest accuract and precision scores
 past_fights_to_average = 10
 
 
@@ -975,14 +974,14 @@ for c in cols:
     except:
         pass
 
-extra_weightclass=['Flyweight','Light Heavyweight', 'Women\'s Featherweight']
-for e  in extra_weightclass:
+extra_weightclass=['Bantamweight', 'Featherweight', 'Flyweight',
+       'Heavyweight', 'Light Heavyweight', 'Lightweight', 'Middleweight',
+       'Welterweight', 'Women\'s Bantamweight','Women\'s Featherweight',
+       'Women\'s Flyweight', 'Women\'s Strawweight']
+
+for e in extra_weightclass:
     if e not in df_future_est:
         df_future_est[e] = 0
-
-
-# In[136]:
-
 
 X_pred=df_future_est[['location', 'title_bout',
        'R_Height', 'R_Weight', 'R_Reach', 'R_KD', 'R_SIG_STR_pct', 'R_TD_pct',
@@ -1004,26 +1003,15 @@ X_pred=df_future_est[['location', 'title_bout',
        'B_Sub_win_%', 'B_Stance_Orthodox', 'B_Stance_Southpaw', 'B_num_fights',
        'B_record', 'B_age', 'Bantamweight', 'Featherweight', 'Flyweight',
        'Heavyweight', 'Light Heavyweight', 'Lightweight', 'Middleweight',
-       'Welterweight', 'Women\'s Bantamweight', 'Women\'s Featherweight',
+       'Welterweight', 'Women\'s Bantamweight','Women\'s Featherweight',
        'Women\'s Flyweight', 'Women\'s Strawweight']]  # Features
-
-
-# In[137]:
-
 
 predicted_classes = clf.predict(X_pred)
 proba = clf.predict_proba(X_pred)
 
-
-# In[138]:
-
-
 df_future_est['Red_win'] = predicted_classes
 df_future_est['Confidence'] = np.amax(proba, axis=1)
 
-
-# In[139]:
-
-
-#df_future_est[df_future_est['date']=='2020-06-20'][['date','R_fighter','B_fighter','Red_win', 'Confidence']]
-df_future_est[['date','R_fighter','B_fighter','Red_win', 'Confidence']]
+df_output = df_future_est[df_future_est['date']>='2020-07-18'][['date','R_fighter','B_fighter','Red_win', 'Confidence']]
+df_output.to_csv(DATA_PATH+'/predictions.csv', index = False, header=True)
+print(df_output)
