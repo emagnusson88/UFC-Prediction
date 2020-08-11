@@ -15,7 +15,8 @@ ufc-prediction
 │   │   scrape_fight_links.py
 │   │   scrape_fight_data.py
 │   │   scrape_fighter_details.py
-│   │   Execute: scrape_data.py
+│   │   scrape_data.bat -scheduled scraping task to run every Monday at midnight
+│   │   Run: scrape_data.py
 │
 └───data
 │   │   total_fight_data.csv -historical UFC fight data (e.g. fight participants, weight class, significant strikes)
@@ -24,14 +25,13 @@ ufc-prediction
 │
 └───cleaning
 │   │   Initial Load, Cleaning, and Feature Engineering.ipynb
-│   │   Execute: clean_data.py
+│   │   Run: clean_data.py
 │  
 └───modeling
 │   │   Modeling and Generalizing for New Bouts.ipynb
 │   │   Best so far: SVM classifier (Accuracy=0.78, Precision=0.76, Recall=0.96, AUC=0.70)
-│   │   Execute: predict.py
+│   │   Run: predict.py
 │
 └───production
-│   │   ...
-│
-```
+    │   Run: streamlit_deploy.py -online deployment for model results and visualizations
+
