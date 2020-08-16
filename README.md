@@ -1,7 +1,7 @@
 # UFC Prediction
 Using past MMA fight and fighter data to predict the outcome of future bouts
 
-![alt text] (https://www.logo-designer.co/wp-content/uploads/2015/07/UFC-logo-design-2015-brand-identity.png)
+![alt text](https://www.logo-designer.co/wp-content/uploads/2015/07/UFC-logo-design-2015-brand-identity.png)
 
 Deployment: https://ufc-prediction.herokuapp.com/
 
