@@ -36,5 +36,5 @@ ufc-prediction
 │
 └───production
     │   Run: streamlit_deploy.py -online deployment for model results and visualizations (pending)
-    │   URL: https://ufc-prediction.herokuapp.com/ (hosted for free, needs to be manually deployed)
+    │   URL: https://ufc-prediction.herokuapp.com/
 
