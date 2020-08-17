@@ -4,7 +4,6 @@ Using past MMA fight and fighter data to predict the outcome of future bouts
 Deployment: https://ufc-prediction.herokuapp.com/
 
 <p align="center">
-  ![alt text](https://www.logo-designer.co/wp-content/uploads/2015/07/UFC-logo-design-2015-brand-identity.png)
   <img width="460" height="300" src="https://www.logo-designer.co/wp-content/uploads/2015/07/UFC-logo-design-2015-brand-identity.png">
 </p>
 
