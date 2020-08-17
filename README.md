@@ -39,6 +39,9 @@ ufc-prediction
 │   │   Run: predict.py
 │
 └───production
+    │   requirements.txt
+    │   setup.sh
+    │   Procfile
     │   Run: streamlit_deploy.py -online deployment for model results and visualizations
     │   URL: https://ufc-prediction.herokuapp.com/
 
