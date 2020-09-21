@@ -84,6 +84,7 @@ print("AUC:", metrics.roc_auc_score(y_test, y_pred))
 
 
 import matplotlib.pyplot as plt
+"""
 y_pred_proba = clf.predict_proba(X_test)[::,1]
 fpr, tpr, _ = metrics.roc_curve(y_test,  y_pred_proba)
 auc = metrics.roc_auc_score(y_test, y_pred_proba)
@@ -93,7 +94,7 @@ plt.xlabel('False Positive rate')
 plt.ylabel('True Positive rate')
 plt.title('ROC')
 plt.show()
-
+"""
 
 # In[5]:
 
@@ -189,6 +190,7 @@ import seaborn as sns
 
 # Creating a bar plot
 feature_importance_plt = feature_importance[feature_importance > 0.01]
+"""
 sns.barplot(x=feature_importance_plt, y=feature_importance_plt.index)
 
 # Add labels to your graph
@@ -197,7 +199,7 @@ plt.ylabel('Features')
 plt.title("Visualizing Important Features")
 plt.legend()
 plt.show()
-
+"""
 
 # ### Create df_fights_train and df_fighter_history_train dataframes with estimated stats
 # - will be pulling much more from df_fighter_history when calculating the estimates data frame
@@ -438,7 +440,7 @@ df_train_est.drop(columns=['win_by_x','last_round'], inplace=True)
 
 # In[28]:
 
-
+"""
 from sklearn.model_selection import GridSearchCV
 
 n_estimators = [100, 300, 500, 800, 1200]
@@ -456,7 +458,7 @@ gridF = GridSearchCV(clf, hyper_opt, cv = 3, verbose = 1,
 #Hyperparameter tuning that takes a long time
 #bestF = gridF.fit(X_train, y_train)
 #bestF
-
+"""
 
 # - Optimal Random Forest Classifier (after hyperparamter tuning)
 
@@ -525,13 +527,14 @@ print("AUC:", metrics.roc_auc_score(y_test, y_pred)) #area under ROC curve (.57)
 y_pred_proba = modelOpt.predict_proba(X_test)[::,1]
 fpr, tpr, _ = metrics.roc_curve(y_test,  y_pred_proba)
 auc = metrics.roc_auc_score(y_test, y_pred_proba)
+"""
 plt.plot(fpr,tpr,label="data 1, AUC="+str(auc))
 plt.legend(loc=4)
 plt.xlabel('False Positive rate')
 plt.ylabel('True Positive rate')
 plt.title('ROC')
 plt.show()
-
+"""
 
 # In[13]:
 
@@ -592,10 +595,11 @@ df_hist = df_train_est[['location', 'title_bout',
        'Welterweight', 'Women\'s Bantamweight', 'Women\'s Featherweight',
        'Women\'s Flyweight', 'Women\'s Strawweight']]
 
+"""
 fig, ax = plt.subplots(figsize=(15,12))         # Sample figsize in inches
 corrMatrix = df_hist[feature_importance[feature_importance > 0.017].index].corr()
 sns.heatmap(corrMatrix, annot=True, linewidths=.2, ax=ax)
-
+"""
 
 # <h4>Implement Support Vector Machine Classifier (MAIN MODEL)</h4>
 
@@ -784,7 +788,7 @@ df_future_est = pd.concat([df_future_est, pd.get_dummies(df_future_est['Stance']
 
 #df_future_est.drop(columns=['Stance','Switch','Open Stance','Sideways'], inplace=True)
 
-cols=['Stance','Switch','Open Stance','Sideways']
+cols=['Stance','Switch','Open Stance','Sideways'] #'Southpaw'
 for c in cols:
     try:
         df_future_est.drop(columns=c, inplace=True)
@@ -883,7 +887,7 @@ df_future_est.rename(columns={'date_x':'date', 'KO':'KO_win_%', 'Submission':'Su
 
 df_future_est = pd.concat([df_future_est, pd.get_dummies(df_future_est['Stance'])], axis=1)
 
-cols=['Stance','Switch','Open Stance','Sideways']
+cols=['Stance','Switch','Open Stance','Sideways'] #southpaw
 for c in cols:
     try:
         df_future_est.drop(columns=c, inplace=True)
