@@ -1,21 +1,9 @@
 R_fighter;B_fighter;Format;date;location
-Holly Holm;Irene Aldana;Women's Bantamweight Bout;October 03, 2020;Abu Dhabi, Abu Dhabi, United Arab Emirates
-Yorgan De Castro;Carlos Felipe;Heavyweight Bout;October 03, 2020;Abu Dhabi, Abu Dhabi, United Arab Emirates
-Germaine de Randamie;Julianna Pena;Women's Bantamweight Bout;October 03, 2020;Abu Dhabi, Abu Dhabi, United Arab Emirates
-Kyler Phillips;Cameron Else;Bantamweight Bout;October 03, 2020;Abu Dhabi, Abu Dhabi, United Arab Emirates
-Dequan Townsend;Dusko Todorovic;Middleweight Bout;October 03, 2020;Abu Dhabi, Abu Dhabi, United Arab Emirates
-Carlos Condit;Court McGee;Welterweight Bout;October 03, 2020;Abu Dhabi, Abu Dhabi, United Arab Emirates
-Charles Jourdain;Josh Culibao;Featherweight Bout;October 03, 2020;Abu Dhabi, Abu Dhabi, United Arab Emirates
-Jordan Williams;Nassourdine Imavov;Middleweight Bout;October 03, 2020;Abu Dhabi, Abu Dhabi, United Arab Emirates
-Loma Lookboonmee;Jinh Yu Frey;Women's Strawweight Bout;October 03, 2020;Abu Dhabi, Abu Dhabi, United Arab Emirates
-Casey Kenney;Heili Alateng;Bantamweight Bout;October 03, 2020;Abu Dhabi, Abu Dhabi, United Arab Emirates
-Luigi Vendramini;Jessin Ayari;Lightweight Bout;October 03, 2020;Abu Dhabi, Abu Dhabi, United Arab Emirates
 Marlon Moraes;Cory Sandhagen;Bantamweight Bout;October 10, 2020;Abu Dhabi, Abu Dhabi, United Arab Emirates
 Edson Barboza;Makwan Amirkhani;Featherweight Bout;October 10, 2020;Abu Dhabi, Abu Dhabi, United Arab Emirates
 Ben Rothwell;Marcin Tybura;Heavyweight Bout;October 10, 2020;Abu Dhabi, Abu Dhabi, United Arab Emirates
 Markus Perez;Dricus Du Plessis;Middleweight Bout;October 10, 2020;Abu Dhabi, Abu Dhabi, United Arab Emirates
 Tom Aspinall;Alan Baudot;Heavyweight Bout;October 10, 2020;Abu Dhabi, Abu Dhabi, United Arab Emirates
-Thomas Almeida;Alejandro Perez;Featherweight Bout;October 10, 2020;Abu Dhabi, Abu Dhabi, United Arab Emirates
 Youssef Zalal;Ilia Topuria;Featherweight Bout;October 10, 2020;Abu Dhabi, Abu Dhabi, United Arab Emirates
 Tom Breese;KB Bhullar;Middleweight Bout;October 10, 2020;Abu Dhabi, Abu Dhabi, United Arab Emirates
 Chris Daukaus;Rodrigo Nascimento;Heavyweight Bout;October 10, 2020;Abu Dhabi, Abu Dhabi, United Arab Emirates
@@ -24,13 +12,18 @@ Ali AlQaisi;Tony Kelley;Bantamweight Bout;October 10, 2020;Abu Dhabi, Abu Dhabi,
 Giga Chikadze;Omar Morales;Featherweight Bout;October 10, 2020;Abu Dhabi, Abu Dhabi, United Arab Emirates
 Tracy Cortez;Stephanie Egger;Women's Bantamweight Bout;October 10, 2020;Abu Dhabi, Abu Dhabi, United Arab Emirates
 Bruno Silva;Tagir Ulanbekov;Flyweight Bout;October 10, 2020;Abu Dhabi, Abu Dhabi, United Arab Emirates
-Gillian Robertson;Poliana Botelho;Women's Flyweight Bout;October 10, 2020;Abu Dhabi, Abu Dhabi, United Arab Emirates
 Brian Ortega;Chan Sung Jung;Featherweight Bout;October 17, 2020;Abu Dhabi, Abu Dhabi, United Arab Emirates
 Ciryl Gane;Ante Delija;Heavyweight Bout;October 17, 2020;Abu Dhabi, Abu Dhabi, United Arab Emirates
+Katlyn Chookagian;Jessica Andrade;Women's Flyweight Bout;October 17, 2020;Abu Dhabi, Abu Dhabi, United Arab Emirates
 Jimmy Crute;Modestas Bukauskas;Light Heavyweight Bout;October 17, 2020;Abu Dhabi, Abu Dhabi, United Arab Emirates
+Thomas Almeida;Jonathan Martinez;Featherweight Bout;October 17, 2020;Abu Dhabi, Abu Dhabi, United Arab Emirates
+Mateusz Gamrot;Guram Kutateladze;Lightweight Bout;October 17, 2020;Abu Dhabi, Abu Dhabi, United Arab Emirates
+Gillian Robertson;Poliana Botelho;Women's Flyweight Bout;October 17, 2020;Abu Dhabi, Abu Dhabi, United Arab Emirates
+Claudio Silva;James Krause;Welterweight Bout;October 17, 2020;Abu Dhabi, Abu Dhabi, United Arab Emirates
 Junyong Park;John Phillips;Middleweight Bout;October 17, 2020;Abu Dhabi, Abu Dhabi, United Arab Emirates
 Jamie Mullarkey;Fares Ziam;Lightweight Bout;October 17, 2020;Abu Dhabi, Abu Dhabi, United Arab Emirates
 Gadzhimurad Antigulov;Maxim Grishin;Light Heavyweight Bout;October 17, 2020;Abu Dhabi, Abu Dhabi, United Arab Emirates
+Said Nurmagomedov;Mark Striegl;Bantamweight Bout;October 17, 2020;Abu Dhabi, Abu Dhabi, United Arab Emirates
 Khabib Nurmagomedov;Justin Gaethje;UFC Lightweight Title Bout;October 24, 2020;Abu Dhabi, Abu Dhabi, United Arab Emirates
 Robert Whittaker;Jared Cannonier;Middleweight Bout;October 24, 2020;Abu Dhabi, Abu Dhabi, United Arab Emirates
 Alexander Volkov;Walt Harris;Heavyweight Bout;October 24, 2020;Abu Dhabi, Abu Dhabi, United Arab Emirates
@@ -40,4 +33,6 @@ Magomed Ankalaev;Ion Cutelaba;Light Heavyweight Bout;October 24, 2020;Abu Dhabi,
 Stefan Struve;Tai Tuivasa;Heavyweight Bout;October 24, 2020;Abu Dhabi, Abu Dhabi, United Arab Emirates
 Jacob Malkoun;Phillip Hawes;Middleweight Bout;October 24, 2020;Abu Dhabi, Abu Dhabi, United Arab Emirates
 Umar Nurmagomedov;Sergey Morozov;Bantamweight Bout;October 24, 2020;Abu Dhabi, Abu Dhabi, United Arab Emirates
-Brandon Moreno;Alex Perez;Flyweight Bout;November 21, 2020;---
+Uriah Hall;Anderson Silva;Middleweight Bout;October 31, 2020;Las Vegas, Nevada, USA
+Adrian Yanez;Aaron Phillips;Bantamweight Bout;October 31, 2020;Las Vegas, Nevada, USA
+Brandon Moreno;Alex Perez;Flyweight Bout;November 21, 2020;Las Vegas, Nevada, USA
