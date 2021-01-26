@@ -929,7 +929,8 @@ est_columns = ['KD', 'SIG_STR_pct', 'TD_pct', 'SUB_ATT', 'PASS', 'REV',
        'GROUND_LANDED', 'total_time_fought(sec)', 'no_of_rounds', 'KO_win_%',
        'Sub_win_%']
 
-
+if 'B_Stance_Southpaw' not in df_future_est:
+    df_future_est['B_Stance_Southpaw'] = 0
 
 df_future_est[est_columns] = df_future_est.groupby(['R_fighter', 'B_fighter', 'date', 'location',
        'title_bout', 'weight_class', 'B_Height', 'B_Weight',
