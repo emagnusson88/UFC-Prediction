@@ -19,20 +19,14 @@ df_fighter_history_train = pd.read_csv(DATA_PATH+'/df_fighter_history_train.csv'
 df_train = pd.read_csv(DATA_PATH+'/df_train.csv')
 
 
-from time import process_time
-start_time = process_time()
-
 # <h4>Implement Random Forest Classifier on omniscient data (i.e. real fight stats are known prior to predicting a winner for the bout)</h4>
 
 # In[2]:
 
 
 # Import train_test_split function
-#from sklearn.model_selection import train_test_split
-#Import scikit-learn metrics module for accuracy calculation
-#from sklearn import metrics
+from sklearn.model_selection import train_test_split
 
-'''
 # scaling not needed for tree model
 X=df_train[['R_KD', 'B_KD', 'R_SIG_STR_pct',
        'B_SIG_STR_pct', 'R_TD_pct', 'B_TD_pct', 'R_SUB_ATT', 'B_SUB_ATT',
@@ -76,19 +70,20 @@ y_pred=clf.predict(X_test)
 # In[3]:
 
 
-
+#Import scikit-learn metrics module for accuracy calculation
+from sklearn import metrics
 # Model Accuracy, how often is the classifier correct?
 print("Accuracy:",metrics.accuracy_score(y_test, y_pred))
 #Receiver Operating Characteristic Area-Under-Curve (0->1, where 1 is a perfect classifier))
 print("AUC:", metrics.roc_auc_score(y_test, y_pred))
-'''
+
 
 # - Plot Receiver Operating Characteristic
 
 # In[4]:
 
 
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 """
 y_pred_proba = clf.predict_proba(X_test)[::,1]
 fpr, tpr, _ = metrics.roc_curve(y_test,  y_pred_proba)
@@ -103,7 +98,7 @@ plt.show()
 
 # In[5]:
 
-'''
+
 feature_importance = pd.Series(clf.feature_importances_,index=['R_KD', 'B_KD', 'R_SIG_STR_pct',
        'B_SIG_STR_pct', 'R_TD_pct', 'B_TD_pct', 'R_SUB_ATT', 'B_SUB_ATT',
        'R_PASS', 'B_PASS', 'R_REV', 'B_REV',
@@ -131,13 +126,13 @@ feature_importance = pd.Series(clf.feature_importances_,index=['R_KD', 'B_KD', '
 
 
 feature_importance[feature_importance > 0.01]
-'''
+
 
 # <h4>Implement Random Forest Classifier only using features that WOULD BE KNOWN before a fight begins</h4>
 
 # In[7]:
 
-'''
+
 X=df_train[['location','title_bout','R_Height',
        'R_Weight', 'R_Reach', 'R_KO_win_%', 'R_Sub_win_%', 'R_Stance_Orthodox',
        'R_Stance_Southpaw', 'R_num_fights', 'R_record', 'R_age', 'B_Height',
@@ -182,20 +177,20 @@ feature_importance = pd.Series(clf.feature_importances_,index=['location','title
        'Women\'s Featherweight', 'Women\'s Flyweight', 'Women\'s Strawweight']).sort_values(ascending=False)
 
 feature_importance[feature_importance > 0.01]
-'''
+
 
 # - Displaying top feature importance when the current fight stats are not available
 
 # In[9]:
 
 
-#import matplotlib.pyplot as plt
-#import seaborn as sns
+import matplotlib.pyplot as plt
+import seaborn as sns
 #get_ipython().run_line_magic('matplotlib', 'inline')
-"""
+
 # Creating a bar plot
 feature_importance_plt = feature_importance[feature_importance > 0.01]
-
+"""
 sns.barplot(x=feature_importance_plt, y=feature_importance_plt.index)
 
 # Add labels to your graph
@@ -272,7 +267,7 @@ df_train_est['fight_rank'] = df_train_est.groupby(['R_fighter','date'])['date_y'
 
 df_train_est = df_train_est[df_train_est['fight_rank']<=past_fights_to_average]
 
-df_train_est.drop(columns=['win','R_num_wins','date_y','fighter_name'], inplace=True)
+df_train_est.drop(columns=['win','R_num_wins','date_y','fighter_name','fight_rank'], inplace=True)
 
 
 df_train_est['R_age'] = df_train_est['date'] - df_train_est['DOB']
@@ -291,36 +286,10 @@ est_columns = ['KD', 'SIG_STR_pct', 'TD_pct', 'SUB_ATT', 'PASS', 'REV',
        'Sub_win_%']
 
 
-### add regression here
-
-from sklearn.linear_model import LinearRegression
-from sklearn.model_selection import train_test_split
-
-est_groups = df_train_est.groupby(['R_fighter','B_fighter','date'])
-
-for g in est_groups:
-    for i in list(g[1][est_columns]):
-        if g[1].shape[0]>1:
-
-            X = g[1]['fight_rank'].values.reshape(-1, 1)
-            y = g[1][i].values.reshape(-1, 1)
-            pred = X.max()+1
-
-            model = LinearRegression()
-            model_fit = model.fit(X,y)
-
-            df_train_est.loc[(df_train_est['R_fighter']==g[0][0])
-                         & (df_train_est['B_fighter']==g[0][1])
-                         & (pd.to_datetime(df_train_est['date'])==pd.to_datetime(g[0][2])), i] = max(0,model_fit.predict(pred.reshape(1, -1)))
-
-        else:
-            df_train_est.loc[(df_train_est['R_fighter']==g[0][0])
-                         & (df_train_est['B_fighter']==g[0][1])
-                         & (pd.to_datetime(df_train_est['date'])==pd.to_datetime(g[0][2])), i] = g[1][i].mean()
-
-df_train_est.drop(columns=['fight_rank'], inplace=True)
-
-###
+df_train_est[est_columns] = df_train_est.groupby(['R_fighter', 'B_fighter', 'win_by_x', 'last_round', 'date', 'location',
+       'title_bout', 'weight_class', 'Red_win', 'R_Height', 'R_Weight',
+       'R_Reach', 'R_Stance_Orthodox', 'R_Stance_Southpaw', 'R_num_fights',
+       'R_record', 'R_age'])[est_columns].transform('mean')
 
 df_train_est = df_train_est.drop_duplicates()
 
@@ -365,6 +334,7 @@ df_train_est = df_train_est[df_train_est['date_x'] > df_train_est['date_y']]
 
 
 df_train_est = pd.concat([df_train_est, pd.get_dummies(df_train_est['win_by'])], axis=1)
+#df_train_est.drop(columns=['win_by','Other'], inplace=True)
 
 cols=['win_by','Other']
 for c in cols:
@@ -376,6 +346,8 @@ for c in cols:
 df_train_est.rename(columns={'date_x':'date', 'KO':'KO_win_%', 'Submission':'Sub_win_%'}, inplace=True)
 
 df_train_est = pd.concat([df_train_est, pd.get_dummies(df_train_est['Stance'])], axis=1)
+
+#df_train_est.drop(columns=['Stance','Switch','Open Stance','Sideways'], inplace=True)
 
 cols=['Stance','Switch','Open Stance','Sideways']
 for c in cols:
@@ -401,7 +373,7 @@ df_train_est['fight_rank'] = df_train_est.groupby(['B_fighter','date'])['date_y'
 
 df_train_est = df_train_est[df_train_est['fight_rank']<=past_fights_to_average]
 
-df_train_est.drop(columns=['win','B_num_wins','date_y','fighter_name'], inplace=True)
+df_train_est.drop(columns=['win','B_num_wins','date_y','fighter_name','fight_rank'], inplace=True)
 
 
 df_train_est['B_age'] = df_train_est['date'] - df_train_est['DOB']
@@ -421,33 +393,10 @@ est_columns = ['KD', 'SIG_STR_pct', 'TD_pct', 'SUB_ATT', 'PASS', 'REV',
 
 
 
-### add regression here
-
-est_groups = df_train_est.groupby(['R_fighter','B_fighter','date'])
-
-for g in est_groups:
-    for i in list(g[1][est_columns]):
-        if g[1].shape[0]>1:
-
-            X = g[1]['fight_rank'].values.reshape(-1, 1)
-            y = g[1][i].values.reshape(-1, 1)
-            pred = X.max()+1
-
-            model = LinearRegression()
-            model_fit = model.fit(X,y)
-
-            df_train_est.loc[(df_train_est['R_fighter']==g[0][0])
-                         & (df_train_est['B_fighter']==g[0][1])
-                         & (pd.to_datetime(df_train_est['date'])==pd.to_datetime(g[0][2])), i] = max(0,model_fit.predict(pred.reshape(1, -1)))
-
-        else:
-            df_train_est.loc[(df_train_est['R_fighter']==g[0][0])
-                         & (df_train_est['B_fighter']==g[0][1])
-                         & (pd.to_datetime(df_train_est['date'])==pd.to_datetime(g[0][2])), i] = g[1][i].mean()
-
-df_train_est.drop(columns=['fight_rank'], inplace=True)
-
-###
+df_train_est[est_columns] = df_train_est.groupby(['R_fighter', 'B_fighter', 'win_by_x', 'last_round', 'date', 'location',
+       'title_bout', 'weight_class', 'Red_win', 'B_Height', 'B_Weight',
+       'B_Reach', 'B_Stance_Orthodox', 'B_Stance_Southpaw', 'B_num_fights',
+       'B_record', 'B_age'])[est_columns].transform('mean')
 
 df_train_est = df_train_est.drop_duplicates()
 
@@ -515,7 +464,7 @@ gridF = GridSearchCV(clf, hyper_opt, cv = 3, verbose = 1,
 
 # In[11]:
 
-'''
+
 forestOpt = RandomForestClassifier(bootstrap=True,
                                               class_weight=None,
                                               criterion='entropy',
@@ -578,7 +527,6 @@ print("AUC:", metrics.roc_auc_score(y_test, y_pred)) #area under ROC curve (.57)
 y_pred_proba = modelOpt.predict_proba(X_test)[::,1]
 fpr, tpr, _ = metrics.roc_curve(y_test,  y_pred_proba)
 auc = metrics.roc_auc_score(y_test, y_pred_proba)
-'''
 """
 plt.plot(fpr,tpr,label="data 1, AUC="+str(auc))
 plt.legend(loc=4)
@@ -590,7 +538,7 @@ plt.show()
 
 # In[13]:
 
-'''
+
 feature_importance = pd.Series(modelOpt.feature_importances_,index=['location', 'title_bout',
        'R_Height', 'R_Weight', 'R_Reach', 'R_KD', 'R_SIG_STR_pct', 'R_TD_pct',
        'R_SUB_ATT', 'R_PASS', 'R_REV', 'R_SIG_STR._ATT', 'R_SIG_STR._LANDED',
@@ -615,11 +563,11 @@ feature_importance = pd.Series(modelOpt.feature_importances_,index=['location', 
        'Women\'s Flyweight', 'Women\'s Strawweight']).sort_values(ascending=False)
 
 feature_importance[feature_importance > 0.016]
-'''
+
 
 # In[14]:
 
-'''
+
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -646,8 +594,6 @@ df_hist = df_train_est[['location', 'title_bout',
        'Heavyweight', 'Light Heavyweight', 'Lightweight', 'Middleweight',
        'Welterweight', 'Women\'s Bantamweight', 'Women\'s Featherweight',
        'Women\'s Flyweight', 'Women\'s Strawweight']]
-'''
-
 
 """
 fig, ax = plt.subplots(figsize=(15,12))         # Sample figsize in inches
@@ -714,7 +660,7 @@ predicted_classes = clf.predict(X_test)
 print("Accuracy:",metrics.accuracy_score(y_test, predicted_classes))  #when we pred a winner, how often were we right? (.67)
 print("Precision:",metrics.precision_score(y_test, predicted_classes)) #what % of our winner preds were right (.67)
 print("Recall:",metrics.recall_score(y_test, predicted_classes)) #what % of winners did we detect (.93)
-print("F1:",metrics.f1_score(y_test, predicted_classes)) #harmonic mean of precision and recall (.73)
+print("F1:",metrics.f1_score(y_test, y_pred)) #harmonic mean of precision and recall (.73)
 print("AUC:", metrics.roc_auc_score(y_test, predicted_classes)) #area under ROC curve (.56)
 
 
@@ -727,8 +673,6 @@ print("AUC:", metrics.roc_auc_score(y_test, predicted_classes)) #area under ROC 
                      'C': [1, 10, 100, 1000]},
                     {'kernel': ['linear'], 'C': [1, 10, 100, 1000]}]"""
 
-
-'''
 from sklearn.model_selection import GridSearchCV
 def svc_param_selection(X, y, nfolds):
     Cs = [0.001, 0.01, 0.1, 1, 10]
@@ -741,7 +685,7 @@ def svc_param_selection(X, y, nfolds):
     return grid_search.best_params_
 
 svc_param_selection(X, y, 2)
-'''
+
 
 # Transform upcoming fight dataframe to prepare for stat estimates and model
 
@@ -871,7 +815,7 @@ df_future_est['fight_rank'] = df_future_est.groupby(['R_fighter','date'])['date_
 
 df_future_est = df_future_est[df_future_est['fight_rank']<=past_fights_to_average]
 
-df_future_est.drop(columns=['win','R_num_wins','date_y','fighter_name'], inplace=True)
+df_future_est.drop(columns=['win','R_num_wins','date_y','fighter_name','fight_rank'], inplace=True)
 
 
 df_future_est['R_age'] = df_future_est['date'] - df_future_est['DOB']
@@ -890,33 +834,10 @@ est_columns = ['KD', 'SIG_STR_pct', 'TD_pct', 'SUB_ATT', 'PASS', 'REV',
        'Sub_win_%']
 
 
-### add regression here
-
-est_groups = df_future_est.groupby(['R_fighter','B_fighter','date'])
-
-for g in est_groups:
-    for i in list(g[1][est_columns]):
-        if g[1].shape[0]>1:
-
-            X = g[1]['fight_rank'].values.reshape(-1, 1)
-            y = g[1][i].values.reshape(-1, 1)
-            pred = X.max()+1
-
-            model = LinearRegression()
-            model_fit = model.fit(X,y)
-
-            df_future_est.loc[(df_future_est['R_fighter']==g[0][0])
-                         & (df_future_est['B_fighter']==g[0][1])
-                         & (pd.to_datetime(df_future_est['date'])==pd.to_datetime(g[0][2])), i] = max(0,model_fit.predict(pred.reshape(1, -1)))
-
-        else:
-            df_future_est.loc[(df_future_est['R_fighter']==g[0][0])
-                         & (df_future_est['B_fighter']==g[0][1])
-                         & (pd.to_datetime(df_future_est['date'])==pd.to_datetime(g[0][2])), i] = g[1][i].mean()
-
-df_future_est.drop(columns=['fight_rank'], inplace=True)
-
-###
+df_future_est[est_columns] = df_future_est.groupby(['R_fighter', 'B_fighter','date', 'location',
+       'title_bout', 'weight_class','R_Height', 'R_Weight',
+       'R_Reach', 'R_Stance_Orthodox', 'R_Stance_Southpaw', 'R_num_fights',
+       'R_record', 'R_age'])[est_columns].transform('mean')
 
 df_future_est = df_future_est.drop_duplicates()
 
@@ -990,7 +911,7 @@ df_future_est['fight_rank'] = df_future_est.groupby(['B_fighter','date'])['date_
 
 df_future_est = df_future_est[df_future_est['fight_rank']<=past_fights_to_average]
 
-df_future_est.drop(columns=['win','B_num_wins','date_y','fighter_name'], inplace=True)
+df_future_est.drop(columns=['win','B_num_wins','date_y','fighter_name','fight_rank'], inplace=True)
 
 
 df_future_est['B_age'] = df_future_est['date'] - df_future_est['DOB']
@@ -1011,33 +932,10 @@ est_columns = ['KD', 'SIG_STR_pct', 'TD_pct', 'SUB_ATT', 'PASS', 'REV',
 if 'B_Stance_Southpaw' not in df_future_est:
     df_future_est['B_Stance_Southpaw'] = 0
 
-### add regression here
-
-est_groups = df_future_est.groupby(['R_fighter','B_fighter','date'])
-
-for g in est_groups:
-    for i in list(g[1][est_columns]):
-        if g[1].shape[0]>1:
-
-            X = g[1]['fight_rank'].values.reshape(-1, 1)
-            y = g[1][i].values.reshape(-1, 1)
-            pred = X.max()+1
-
-            model = LinearRegression()
-            model_fit = model.fit(X,y)
-
-            df_future_est.loc[(df_future_est['R_fighter']==g[0][0])
-                         & (df_future_est['B_fighter']==g[0][1])
-                         & (pd.to_datetime(df_future_est['date'])==pd.to_datetime(g[0][2])), i] = max(0,model_fit.predict(pred.reshape(1, -1)))
-
-        else:
-            df_future_est.loc[(df_future_est['R_fighter']==g[0][0])
-                         & (df_future_est['B_fighter']==g[0][1])
-                         & (pd.to_datetime(df_future_est['date'])==pd.to_datetime(g[0][2])), i] = g[1][i].mean()
-
-df_future_est.drop(columns=['fight_rank'], inplace=True)
-
-###
+df_future_est[est_columns] = df_future_est.groupby(['R_fighter', 'B_fighter', 'date', 'location',
+       'title_bout', 'weight_class', 'B_Height', 'B_Weight',
+       'B_Reach', 'B_Stance_Orthodox', 'B_Stance_Southpaw', 'B_num_fights',
+       'B_record', 'B_age'])[est_columns].transform('mean')
 
 df_future_est = df_future_est.drop_duplicates()
 
@@ -1125,6 +1023,3 @@ df_output.rename(columns={'date':'Event Date','R_fighter':'Red Corner','B_fighte
 
 df_output.to_csv(DATA_PATH+'/predictions.csv', index = False, header=True)
 print(df_output)
-
-stop_time = process_time()
-print('Elapsed time:', round((stop_time-start_time)/60, 2), ' minutes')
