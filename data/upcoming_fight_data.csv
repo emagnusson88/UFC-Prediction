@@ -1,29 +1,4 @@
 R_fighter;B_fighter;Format;date;location
-Curtis Blaydes;Derrick Lewis;Heavyweight Bout;February 20, 2021;Las Vegas, Nevada, USA
-Ketlen Vieira;Yana Kunitskaya;Women's Bantamweight Bout;February 20, 2021;Las Vegas, Nevada, USA
-Charles Rosa;Darrick Minner;Featherweight Bout;February 20, 2021;Las Vegas, Nevada, USA
-Aleksei Oleinik;Chris Daukaus;Heavyweight Bout;February 20, 2021;Las Vegas, Nevada, USA
-Phil Hawes;Nassourdine Imavov;Middleweight Bout;February 20, 2021;Las Vegas, Nevada, USA
-Andrei Arlovski;Tom Aspinall;Heavyweight Bout;February 20, 2021;Las Vegas, Nevada, USA
-Jared Gordon;Danny Chavez;Featherweight Bout;February 20, 2021;Las Vegas, Nevada, USA
-Drakkar Klose;Luis Pena;Lightweight Bout;February 20, 2021;Las Vegas, Nevada, USA
-Eddie Wineland;John Castaneda;Bantamweight Bout;February 20, 2021;Las Vegas, Nevada, USA
-Nate Landwehr;Julian Erosa;Featherweight Bout;February 20, 2021;Las Vegas, Nevada, USA
-Shana Dobson;Casey O'Neill;Women's Flyweight Bout;February 20, 2021;Las Vegas, Nevada, USA
-Chas Skelly;Jamall Emmers;Featherweight Bout;February 20, 2021;Las Vegas, Nevada, USA
-Aiemann Zahabi;Drako Rodriguez;Bantamweight Bout;February 20, 2021;Las Vegas, Nevada, USA
-Serghei Spivac;Jared Vanderaa;Heavyweight Bout;February 20, 2021;Las Vegas, Nevada, USA
-Jairzinho Rozenstruik;Ciryl Gane;Heavyweight Bout;February 27, 2021;Las Vegas, Nevada, USA
-Nikita Krylov;Magomed Ankalaev;Light Heavyweight Bout;February 27, 2021;Las Vegas, Nevada, USA
-Montana De La Rosa;Mayra Bueno Silva;Women's Flyweight Bout;February 27, 2021;Las Vegas, Nevada, USA
-Randy Brown;Alex Oliveira;Welterweight Bout;February 27, 2021;Las Vegas, Nevada, USA
-Pedro Munhoz;Jimmie Rivera;Bantamweight Bout;February 27, 2021;Las Vegas, Nevada, USA
-Alex Caceres;Kevin Croom;Featherweight Bout;February 27, 2021;Las Vegas, Nevada, USA
-Alexander Hernandez;Thiago Moises;Lightweight Bout;February 27, 2021;Las Vegas, Nevada, USA
-Alexis Davis;Sabina Mazo;Women's Bantamweight Bout;February 27, 2021;Las Vegas, Nevada, USA
-William Knight;Alonzo Menifield;Light Heavyweight Bout;February 27, 2021;Las Vegas, Nevada, USA
-Vince Cachero;Ronnie Lawrence;Bantamweight Bout;February 27, 2021;Las Vegas, Nevada, USA
-Dustin Jacoby;Maxim Grishin;Light Heavyweight Bout;February 27, 2021;Las Vegas, Nevada, USA
 Jan Blachowicz;Israel Adesanya;UFC Light Heavyweight Title Bout;March 06, 2021;Las Vegas, Nevada, USA
 Amanda Nunes;Megan Anderson;UFC Women's Featherweight Title Bout;March 06, 2021;Las Vegas, Nevada, USA
 Petr Yan;Aljamain Sterling;UFC Bantamweight Title Bout;March 06, 2021;Las Vegas, Nevada, USA
@@ -32,20 +7,33 @@ Thiago Santos;Aleksandar Rakic;Light Heavyweight Bout;March 06, 2021;Las Vegas, 
 Dominick Cruz;Casey Kenney;Bantamweight Bout;March 06, 2021;Las Vegas, Nevada, USA
 Song Yadong;Kyler Phillips;Bantamweight Bout;March 06, 2021;Las Vegas, Nevada, USA
 Joseph Benavidez;Askar Askarov;Flyweight Bout;March 06, 2021;Las Vegas, Nevada, USA
-Livinha Souza;Amanda Lemos;Women's Strawweight Bout;March 06, 2021;Las Vegas, Nevada, USA
-Sean Brady;Jake Matthews;Welterweight Bout;March 06, 2021;Las Vegas, Nevada, USA
-Kennedy Nzechukwu;Carlos Ulberg;Light Heavyweight Bout;March 06, 2021;Las Vegas, Nevada, USA
 Rogerio Bontorin;Kai Kara-France;Flyweight Bout;March 06, 2021;Las Vegas, Nevada, USA
+Tim Elliott;Jordan Espinosa;Flyweight Bout;March 06, 2021;Las Vegas, Nevada, USA
+Kennedy Nzechukwu;Carlos Ulberg;Light Heavyweight Bout;March 06, 2021;Las Vegas, Nevada, USA
+Sean Brady;Jake Matthews;Welterweight Bout;March 06, 2021;Las Vegas, Nevada, USA
+Livinha Souza;Amanda Lemos;Women's Strawweight Bout;March 06, 2021;Las Vegas, Nevada, USA
+Uros Medic;Aalon Cruz;Lightweight Bout;March 06, 2021;Las Vegas, Nevada, USA
+Mario Bautista;Trevin Jones;Bantamweight Bout;March 06, 2021;Las Vegas, Nevada, USA
 Leon Edwards;Belal Muhammad;Welterweight Bout;March 13, 2021;Las Vegas, Nevada, USA
-Ricardo Ramos;Zubaira Tukhugov;Featherweight Bout;March 13, 2021;Las Vegas, Nevada, USA
 Misha Cirkunov;Ryan Spann;Light Heavyweight Bout;March 13, 2021;Las Vegas, Nevada, USA
-Steve Garcia;Charles Jourdain;Featherweight Bout;March 13, 2021;Las Vegas, Nevada, USA
 Tagir Ulanbekov;Matheus Nicolau Pereira;Flyweight Bout;March 13, 2021;Las Vegas, Nevada, USA
+Dan Ige;Gavin Tucker;Featherweight Bout;March 13, 2021;Las Vegas, Nevada, USA
+Ricardo Ramos;Zubaira Tukhugov;Featherweight Bout;March 13, 2021;Las Vegas, Nevada, USA
+Charles Jourdain;Marcelo Rojo;Featherweight Bout;March 13, 2021;Las Vegas, Nevada, USA
 Gloria de Paula;Jinh Yu Frey;Women's Strawweight Bout;March 13, 2021;Las Vegas, Nevada, USA
+Angela Hill;Ashley Yoder;Women's Strawweight Bout;March 13, 2021;Las Vegas, Nevada, USA
 Derek Brunson;Kevin Holland;Middleweight Bout;March 20, 2021;Las Vegas, Nevada, USA
 Gregor Gillespie;Brad Riddell;Lightweight Bout;March 20, 2021;Las Vegas, Nevada, USA
+Tai Tuivasa;Don'Tale Mayes;Heavyweight Bout;March 20, 2021;Las Vegas, Nevada, USA
+Song Kenan;Max Griffin;Welterweight Bout;March 20, 2021;Las Vegas, Nevada, USA
+Marion Reneau;Macy Chiasson;Women's Bantamweight Bout;March 20, 2021;Las Vegas, Nevada, USA
 Stipe Miocic;Francis Ngannou;UFC Heavyweight Title Bout;March 27, 2021;Las Vegas, Nevada, USA
 Alexander Volkanovski;Brian Ortega;UFC Featherweight Title Bout;March 27, 2021;Las Vegas, Nevada, USA
 Tyron Woodley;Vicente Luque;Welterweight Bout;March 27, 2021;Las Vegas, Nevada, USA
 Sean O'Malley;Thomas Almeida;Bantamweight Bout;March 27, 2021;Las Vegas, Nevada, USA
+Jamie Mullarkey;Khama Worthy;Lightweight Bout;March 27, 2021;Las Vegas, Nevada, USA
+Gillian Robertson;Miranda Maverick;Women's Flyweight Bout;March 27, 2021;Las Vegas, Nevada, USA
+Marc-Andre Barriault;Abu Azaitar;Middleweight Bout;March 27, 2021;Las Vegas, Nevada, USA
 Shane Young;Omar Morales;Featherweight Bout;March 27, 2021;Las Vegas, Nevada, USA
+William Knight;Alonzo Menifield;Light Heavyweight Bout;March 27, 2021;Las Vegas, Nevada, USA
+Robert Whittaker;Paulo Costa;Middleweight Bout;April 17, 2021;Las Vegas, Nevada, USA
