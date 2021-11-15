@@ -1126,5 +1126,8 @@ df_output.rename(columns={'date':'Event Date','R_fighter':'Red Corner','B_fighte
 df_output.to_csv(DATA_PATH+'/predictions.csv', index = False, header=True)
 print(df_output)
 
+with open('historical_predictions.csv','a') as fd:
+    fd.write(df_output)
+
 stop_time = process_time()
 print('Elapsed time:', round((stop_time-start_time)/60, 2), ' minutes')
