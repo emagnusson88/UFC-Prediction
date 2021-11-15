@@ -1,25 +1,25 @@
-Event Date,Red Corner,Blue Corner,Red Win,Confidence
-2021-11-20,Ketlen Vieira,Miesha Tate,1,0.5416653545802415
-2021-11-20,Michael Chiesa,Sean Brady,1,0.6244788595482431
-2021-11-20,Rani Yahya,Kyung Ho Kang,1,0.658729810654539
-2021-12-04,Rob Font,Jose Aldo,1,0.6770042822173641
-2021-12-04,Brad Riddell,Rafael Fiziev,1,0.5553494879853337
-2021-12-04,Jimmy Crute,Jamahal Hill,1,0.7005062768781922
-2021-12-11,Charles Oliveira,Dustin Poirier,1,0.6083200218528322
-2021-12-11,Amanda Nunes,Julianna Pena,1,0.6093166524875346
-2021-12-11,Geoff Neal,Santiago Ponzinibbio,1,0.7508472732002166
-2021-12-11,Kai Kara-France,Cody Garbrandt,1,0.5945080123737386
-2021-12-11,Raulian Paiva,Sean O'Malley,1,0.5457054444135793
-2021-12-11,Josh Emmett,Dan Ige,0,0.6351127432012563
-2021-12-11,Pedro Munhoz,Dominick Cruz,1,0.6595040389655592
-2021-12-11,Alex Perez,Matt Schnell,1,0.7589742159361914
-2021-12-11,Ryan Hall,Darrick Minner,1,0.6531042970385119
-2021-12-11,Gillian Robertson,Priscila Cachoeira,1,0.7620760058850847
-2021-12-18,Cub Swanson,Darren Elkins,0,0.5661495406984316
-2021-12-18,Charles Jourdain,Andre Ewell,1,0.529541789578031
-2022-01-22,Francis Ngannou,Ciryl Gane,1,0.7343170088597694
-2022-01-22,Brandon Moreno,Deiveson Figueiredo,1,0.7725798579428167
-2022-01-22,Jared Cannonier,Derek Brunson,1,0.6594385958952622
-2022-01-22,Greg Hardy,Aleksei Oleinik,1,0.697693135938929
-2022-01-22,Cody Stamann,Said Nurmagomedov,1,0.6346887969378625
-2022-01-22,Poliana Botelho,Ji Yeon Kim,1,0.6228848053025583
+Event Date,Red Corner,Blue Corner,Confidence,Predicted Winner
+2021-11-20,Ketlen Vieira,Miesha Tate,0.5408541770899691,Miesha Tate
+2021-11-20,Michael Chiesa,Sean Brady,0.6152073295909585,Michael Chiesa
+2021-11-20,Rani Yahya,Kyung Ho Kang,0.6839071472928753,Rani Yahya
+2021-12-04,Rob Font,Jose Aldo,0.6824858294675262,Rob Font
+2021-12-04,Brad Riddell,Rafael Fiziev,0.5747252063437638,Brad Riddell
+2021-12-04,Jimmy Crute,Jamahal Hill,0.6329620965286759,Jimmy Crute
+2021-12-11,Charles Oliveira,Dustin Poirier,0.6244760710949414,Charles Oliveira
+2021-12-11,Amanda Nunes,Julianna Pena,0.579321769477501,Amanda Nunes
+2021-12-11,Geoff Neal,Santiago Ponzinibbio,0.7139327520335951,Geoff Neal
+2021-12-11,Kai Kara-France,Cody Garbrandt,0.5889439067371399,Kai Kara-France
+2021-12-11,Raulian Paiva,Sean O'Malley,0.592134898611449,Sean O'Malley
+2021-12-11,Josh Emmett,Dan Ige,0.5368084140809607,Dan Ige
+2021-12-11,Pedro Munhoz,Dominick Cruz,0.5760456374232008,Pedro Munhoz
+2021-12-11,Alex Perez,Matt Schnell,0.7559190802228234,Alex Perez
+2021-12-11,Ryan Hall,Darrick Minner,0.6242357855120575,Ryan Hall
+2021-12-11,Gillian Robertson,Priscila Cachoeira,0.7679657488203487,Gillian Robertson
+2021-12-18,Cub Swanson,Darren Elkins,0.6370255505334383,Darren Elkins
+2021-12-18,Charles Jourdain,Andre Ewell,0.6337418788299541,Charles Jourdain
+2022-01-22,Francis Ngannou,Ciryl Gane,0.7616077221126607,Francis Ngannou
+2022-01-22,Brandon Moreno,Deiveson Figueiredo,0.7524826955139774,Brandon Moreno
+2022-01-22,Jared Cannonier,Derek Brunson,0.6553080491751526,Jared Cannonier
+2022-01-22,Greg Hardy,Aleksei Oleinik,0.7039091205405716,Greg Hardy
+2022-01-22,Cody Stamann,Said Nurmagomedov,0.5764485687248893,Cody Stamann
+2022-01-22,Poliana Botelho,Ji Yeon Kim,0.6468989128164607,Poliana Botelho

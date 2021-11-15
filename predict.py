@@ -1123,11 +1123,14 @@ df_output = df_future_est[['date','R_fighter','B_fighter','Red_win', 'Confidence
 
 df_output.rename(columns={'date':'Event Date','R_fighter':'Red Corner','B_fighter':'Blue Corner','Red_win':'Red Win'}, inplace = True)
 
+df_output['Predicted Winner'] = np.where(df_output['Red Win']>0.5, df_output['Red Corner'], df_output['Blue Corner'])
+
+df_output.drop('Red Win', axis=1, inplace=True)
+
 df_output.to_csv(DATA_PATH+'/predictions.csv', index = False, header=True)
 print(df_output)
 
-with open('historical_predictions.csv','a') as fd:
-    fd.write(df_output)
+df_output.to_csv(DATA_PATH+'/historical_predictions.csv', index = False, mode='a')
 
 stop_time = process_time()
 print('Elapsed time:', round((stop_time-start_time)/60, 2), ' minutes')
