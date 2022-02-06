@@ -1130,7 +1130,7 @@ df_output.drop('Red Win', axis=1, inplace=True)
 df_output.to_csv(DATA_PATH+'/predictions.csv', index = False, header=True)
 print(df_output)
 
-df_output.to_csv(DATA_PATH+'/historical_predictions.csv', index = False, mode='a')
+df_output.to_csv(DATA_PATH+'/historical_predictions.csv', index = False, header=True, mode='a')
 
 stop_time = process_time()
 print('Elapsed time:', round((stop_time-start_time)/60, 2), ' minutes')
