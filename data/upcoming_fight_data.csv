@@ -1,42 +1,61 @@
 R_fighter;B_fighter;Format;date;location
-Jan Blachowicz;Aleksandar Rakic;Light Heavyweight Bout;May 14, 2022;Las Vegas, Nevada, USA
-Ryan Spann;Ion Cutelaba;Light Heavyweight Bout;May 14, 2022;Las Vegas, Nevada, USA
-Davey Grant;Louis Smolka;Bantamweight Bout;May 14, 2022;Las Vegas, Nevada, USA
-Katlyn Chookagian;Amanda Ribas;Women's Flyweight Bout;May 14, 2022;Las Vegas, Nevada, USA
-Frank Camacho;Manuel Torres;Lightweight Bout;May 14, 2022;Las Vegas, Nevada, USA
-Jake Hadley;Allan Nascimento;Flyweight Bout;May 14, 2022;Las Vegas, Nevada, USA
-Viviane Araujo;Andrea Lee;Women's Flyweight Bout;May 14, 2022;Las Vegas, Nevada, USA
-Michael Johnson;Alan Patrick;Lightweight Bout;May 14, 2022;Las Vegas, Nevada, USA
-Virna Jandiroba;Angela Hill;Women's Strawweight Bout;May 14, 2022;Las Vegas, Nevada, USA
-Tatsuro Taira;Carlos Candelario;Flyweight Bout;May 14, 2022;Las Vegas, Nevada, USA
-Nick Maximov;Andre Petroski;Middleweight Bout;May 14, 2022;Las Vegas, Nevada, USA
-Holly Holm;Ketlen Vieira;Women's Bantamweight Bout;May 21, 2022;Las Vegas, Nevada, USA
-Eryk Anders;Junyong Park;Middleweight Bout;May 21, 2022;Las Vegas, Nevada, USA
-Santiago Ponzinibbio;Michel Pereira;Welterweight Bout;May 21, 2022;Las Vegas, Nevada, USA
-Alexander Volkov;Jairzinho Rozenstruik;Heavyweight Bout;June 04, 2022;Las Vegas, Nevada, USA
-Glover Teixeira;Jiri Prochazka;UFC Light Heavyweight Title Bout;June 11, 2022;Kallang, Singapore
-Valentina Shevchenko;Taila Santos;UFC Women's Flyweight Title Bout;June 11, 2022;Kallang, Singapore
-Zhang Weili;Joanna Jedrzejczyk;Women's Strawweight Bout;June 11, 2022;Kallang, Singapore
-SeungWoo Choi;Josh Culibao;Featherweight Bout;June 11, 2022;Kallang, Singapore
-Jack Della Maddalena;Ramazan Emeev;Welterweight Bout;June 11, 2022;Kallang, Singapore
-Brendan Allen;Jacob Malkoun;Middleweight Bout;June 11, 2022;Kallang, Singapore
-Kyung Ho Kang;Batgerel Danaa;Bantamweight Bout;June 11, 2022;Kallang, Singapore
-Orion Cosce;Blood Diamond;Welterweight Bout;June 11, 2022;Kallang, Singapore
-Ramona Pascual;Joselyne Edwards;Women's Bantamweight Bout;June 11, 2022;Kallang, Singapore
-Na Liang;Silvana Gomez Juarez;Women's Strawweight Bout;June 11, 2022;Kallang, Singapore
-Rogerio Bontorin;Manel Kape;Flyweight Bout;June 11, 2022;Kallang, Singapore
-Calvin Kattar;Josh Emmett;Featherweight Bout;June 18, 2022;Austin, Texas, USA
-Court McGee;Jeremiah Wells;Welterweight Bout;June 18, 2022;Austin, Texas, USA
-Joaquin Buckley;Albert Duraev;Middleweight Bout;June 18, 2022;Austin, Texas, USA
-Tim Means;Kevin Holland;Welterweight Bout;June 18, 2022;Austin, Texas, USA
-Jasmine Jasudavicius;Natalia Silva;Women's Flyweight Bout;June 18, 2022;Austin, Texas, USA
-Damir Ismagulov;Guram Kutateladze;Lightweight Bout;June 18, 2022;Austin, Texas, USA
-Maria Oliveira;Gloria de Paula;Women's Strawweight Bout;June 18, 2022;Austin, Texas, USA
-Eddie Wineland;Cody Stamann;Bantamweight Bout;June 18, 2022;Austin, Texas, USA
-Roman Dolidze;Kyle Daukaus;Middleweight Bout;June 18, 2022;Austin, Texas, USA
-Phil Hawes;Deron Winn;Middleweight Bout;June 18, 2022;Austin, Texas, USA
-Julian Marquez;Gregory Rodrigues;Middleweight Bout;June 18, 2022;Austin, Texas, USA
-Caio Borralho;Armen Petrosyan;Middleweight Bout;July 09, 2022;Las Vegas, Nevada, USA
-Curtis Blaydes;Tom Aspinall;Heavyweight Bout;July 23, 2022;London, England, United Kingdom
-Jack Hermansson;Darren Till;Middleweight Bout;July 23, 2022;London, England, United Kingdom
-Muhammad Mokaev;Charles Johnson;Flyweight Bout;July 23, 2022;London, England, United Kingdom
+Thiago Santos;Jamahal Hill;Light Heavyweight Bout;August 06, 2022;Las Vegas, Nevada, USA
+Vicente Luque;Geoff Neal;Welterweight Bout;August 06, 2022;Las Vegas, Nevada, USA
+Mohammed Usman;Zac Pauga;Ultimate Fighter 30 Heavyweight Tournament Title Bout;August 06, 2022;Las Vegas, Nevada, USA
+Brogan Walker;Juliana Miller;Ultimate Fighter 30 Women's Flyweight Tournament Title Bout;August 06, 2022;Las Vegas, Nevada, USA
+Augusto Sakai;Serghei Spivac;Heavyweight Bout;August 06, 2022;Las Vegas, Nevada, USA
+Ariane Lipski;Priscila Cachoeira;Women's Flyweight Bout;August 06, 2022;Las Vegas, Nevada, USA
+Sam Alvey;Michal Oleksiejczuk;Middleweight Bout;August 06, 2022;Las Vegas, Nevada, USA
+Terrance McKinney;Erick Gonzalez;Lightweight Bout;August 06, 2022;Las Vegas, Nevada, USA
+Bryan Battle;Takashi Sato;Welterweight Bout;August 06, 2022;Las Vegas, Nevada, USA
+Jason Witt;Josh Quinlan;Welterweight Bout;August 06, 2022;Las Vegas, Nevada, USA
+Cory McKenna;Miranda Granger;Women's Strawweight Bout;August 06, 2022;Las Vegas, Nevada, USA
+Mayra Bueno Silva;Stephanie Egger;Women's Bantamweight Bout;August 06, 2022;Las Vegas, Nevada, USA
+Marlon Vera;Dominick Cruz;Bantamweight Bout;August 13, 2022;San Diego, California, USA
+Alexa Grasso;Viviane Araujo;Women's Flyweight Bout;August 13, 2022;San Diego, California, USA
+Devin Clark;Azamat Murzakanov;Light Heavyweight Bout;August 13, 2022;San Diego, California, USA
+Cynthia Calvillo;Nina Nunes;Women's Flyweight Bout;August 13, 2022;San Diego, California, USA
+Bruno Silva;Gerald Meerschaert;Middleweight Bout;August 13, 2022;San Diego, California, USA
+Aspen Ladd;Sara McMann;Women's Bantamweight Bout;August 13, 2022;San Diego, California, USA
+Yazmin Jauregui;Istela Nunes;Women's Strawweight Bout;August 13, 2022;San Diego, California, USA
+Martin Buday;Lukasz Brzeski;Heavyweight Bout;August 13, 2022;San Diego, California, USA
+Kamaru Usman;Leon Edwards;UFC Welterweight Title Bout;August 20, 2022;Salt Lake City, Utah, USA
+Paulo Costa;Luke Rockhold;Middleweight Bout;August 20, 2022;Salt Lake City, Utah, USA
+Jose Aldo;Merab Dvalishvili;Bantamweight Bout;August 20, 2022;Salt Lake City, Utah, USA
+Marcin Tybura;Alexandr Romanov;Heavyweight Bout;August 20, 2022;Salt Lake City, Utah, USA
+Tyson Pedro;Harry Hunsucker;Light Heavyweight Bout;August 20, 2022;Salt Lake City, Utah, USA
+Leonardo Santos;Jared Gordon;Lightweight Bout;August 20, 2022;Salt Lake City, Utah, USA
+Wu Yanan;Lucie Pudilova;Women's Bantamweight Bout;August 20, 2022;Salt Lake City, Utah, USA
+Sean Woodson;Luis Saldana;Featherweight Bout;August 20, 2022;Salt Lake City, Utah, USA
+AJ Fletcher;Ange Loosa;Welterweight Bout;August 20, 2022;Salt Lake City, Utah, USA
+Amir Albazi;Francisco Figueiredo;Flyweight Bout;August 20, 2022;Salt Lake City, Utah, USA
+ Aoriqileng;Jay Perrin;Bantamweight Bout;August 20, 2022;Salt Lake City, Utah, USA
+Daniel Da Silva;Victor Altamirano;Flyweight Bout;August 20, 2022;Salt Lake City, Utah, USA
+Ciryl Gane;Tai Tuivasa;Heavyweight Bout;September 03, 2022;Paris, Ile-de-France, France
+Robert Whittaker;Marvin Vettori;Middleweight Bout;September 03, 2022;Paris, Ile-de-France, France
+Alessio Di Chirico;Roman Kopylov;Middleweight Bout;September 03, 2022;Paris, Ile-de-France, France
+John Makdessi;Nasrat Haqparast;Lightweight Bout;September 03, 2022;Paris, Ile-de-France, France
+Zarah Fairn;Ailin Perez;Women's Featherweight Bout;September 03, 2022;Paris, Ile-de-France, France
+Nassourdine Imavov;Joaquin Buckley;Middleweight Bout;September 03, 2022;Paris, Ile-de-France, France
+Benoit Saint Denis;Christos Giagos;Lightweight Bout;September 03, 2022;Paris, Ile-de-France, France
+Khamzat Chimaev;Nate Diaz;Welterweight Bout;September 10, 2022;Las Vegas, Nevada, USA
+Denis Tiuliulin;Jamie Pickett;Middleweight Bout;September 10, 2022;Las Vegas, Nevada, USA
+Johnny Walker;Ion Cutelaba;Light Heavyweight Bout;September 10, 2022;Las Vegas, Nevada, USA
+Jake Collier;Chris Barnett;Heavyweight Bout;September 10, 2022;Las Vegas, Nevada, USA
+Chad Anheliger;Alatengheili;Bantamweight Bout;September 10, 2022;Las Vegas, Nevada, USA
+Shamil Abdurakhimov;Jailton Almeida;Heavyweight Bout;September 10, 2022;Las Vegas, Nevada, USA
+Melissa Martinez;Elise Reed;Women's Strawweight Bout;September 10, 2022;Las Vegas, Nevada, USA
+Norma Dumont;Danyelle Wolf;Women's Featherweight Bout;September 10, 2022;Las Vegas, Nevada, USA
+Irene Aldana;Macy Chiasson;Women's Bantamweight Bout;September 10, 2022;Las Vegas, Nevada, USA
+Cory Sandhagen;Song Yadong;Bantamweight Bout;September 17, 2022;Las Vegas, Nevada, USA
+Giga Chikadze;Sodiq Yusuff;Featherweight Bout;September 17, 2022;Las Vegas, Nevada, USA
+Chidi Njokuani;Gregory Rodrigues;Middleweight Bout;September 17, 2022;Las Vegas, Nevada, USA
+Tanner Boser;Rodrigo Nascimento;Heavyweight Bout;September 17, 2022;Las Vegas, Nevada, USA
+Andre Fili;Lando Vannata;Featherweight Bout;September 17, 2022;Las Vegas, Nevada, USA
+Maryna Moroz;Sijara Eubanks;Women's Flyweight Bout;September 17, 2022;Las Vegas, Nevada, USA
+Anthony Hernandez;Marc-Andre Barriault;Middleweight Bout;September 17, 2022;Las Vegas, Nevada, USA
+Melissa Gatto;Gillian Robertson;Women's Flyweight Bout;September 17, 2022;Las Vegas, Nevada, USA
+Loma Lookboonmee;Diana Belbita;Women's Strawweight Bout;September 17, 2022;Las Vegas, Nevada, USA
+Charles Oliveira;Islam Makhachev;UFC Lightweight Title Bout;October 22, 2022;Abu Dhabi, Abu Dhabi, United Arab Emirates
+Belal Muhammad;Sean Brady;Welterweight Bout;October 22, 2022;Abu Dhabi, Abu Dhabi, United Arab Emirates
+Beneil Dariush;Mateusz Gamrot;Lightweight Bout;October 22, 2022;Abu Dhabi, Abu Dhabi, United Arab Emirates
